@@ -28,7 +28,11 @@ const App = () => {
         },
       });
 
-      setData(data);
+      if (!data.results.length) {
+        setError("There is no movies by your query");
+      } else {
+        setData(data);
+      }
 
       setIsLoading(false);
     } catch (err) {
